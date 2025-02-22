@@ -6,3 +6,4 @@ santa-caws-backups
 .vscode/c_cpp_properties.json
 
 *-backups
+out

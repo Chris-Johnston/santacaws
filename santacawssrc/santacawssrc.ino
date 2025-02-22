@@ -29,9 +29,10 @@ void clockPattern();
 typedef void (*PatternFunction)();
 
 PatternFunction patternList[] = {
+  fhqwhgadsPattern,
+  
   spinPattern,
   
-  fhqwhgadsPattern,
   blinkPattern,
   clockPattern,
   
@@ -52,6 +53,7 @@ int swPwmPins[] = {
 };
 
 #define COUNT_PWM_PINS 7
+#define ALL_PINS_LEN 7
 
 #define MAINBOARD_PINS_LENGTH 4
 
@@ -240,7 +242,7 @@ int vSpinPatternLUT[] = {0, 50, 255, 128 };
 
 void spinPattern() {
 
-   int offset = (int)(CORRECTED_MILLIS / 75.0) % MAINBOARD_PINS_LENGTH;
+   int offset = (int)(CORRECTED_MILLIS / 100.0) % MAINBOARD_PINS_LENGTH;
 
   for (int i = 0; i < MAINBOARD_PINS_LENGTH; i++) {
     setPwm(i, true, vSpinPatternLUT[(i + offset) % MAINBOARD_PINS_LENGTH]);
@@ -263,6 +265,10 @@ void allOff() {
   for (int i = 0; i < MAINBOARD_PINS_LENGTH; i++) {
     digitalWrite(mainboardPins[i], LOW);
   }
+
+  digitalWrite(childboardCommon, 0);
+  digitalWrite(childboardLeft, 0);
+  digitalWrite(childboardRight, 0);
 }
 
 void allOn() {
@@ -288,11 +294,22 @@ void blinkPattern() {
 void fhqwhgadsPattern() {
 
   allOff();
-  delay(50 + rand() % 100);
+  delay(50 + rand() % 500);
 
-  int r = rand() % MAINBOARD_PINS_LENGTH;
-  digitalWrite(mainboardPins[r], HIGH);
-  delay(rand() % 300);
+  int r = rand() % 4;
+  bool mainboard = (rand() % 2) == 1;
+
+  if (mainboard) {
+    digitalWrite(mainboardPins[r], HIGH);
+  } else {
+
+    digitalWrite(childboardCommon, (r/2) == 1);
+    digitalWrite(childboardLeft, (r % 2) == 0);
+    digitalWrite(childboardLeft, (r % 2) == 1);
+
+  }
+
+  delay(20 + rand() % 50);
 }
 
 void showNibble(int nibble) {
