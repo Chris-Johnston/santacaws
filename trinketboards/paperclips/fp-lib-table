@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "Custom4")(type "KiCad")(uri "C:/Git/santa-caws/library")(options "")(descr ""))
+  (lib (name "Custom")(type "KiCad")(uri "${KIPRJMOD}/Custom.pretty")(options "")(descr ""))
+)
