@@ -127,12 +127,12 @@ You know where to find me if things continue to not work. Have fun!
 
 Schematic:
 
-![alt text](img/schematic.png)
+![schematic](img/schematic.png)
 
 All of the accessoryboards have the same schematic:
 
-![alt text](img/accessory.png)
+![accessory schematic](img/accessory.png)
 
 Board view (front):
 
-![alt text](front-board-view.png)
+![front view image](img/front-board-view.png)
