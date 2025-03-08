@@ -33,6 +33,8 @@ If you feel inclined to hack on this once the board is assembled, this is what y
 - Diagonal cutters
 - Not required but recommended: cotton swaps and isopropyl alcohol to clean up the flux
 
+- Very optional but would recommend if you are interested: download Kicad and look at the schematics and circuitboards, this could help with assembly
+
 # Assembly
 
 This is the fun part, hopefully. If you need a primer on soldering surface mount parts, [the instructions from the crow of judgement board still applies](https://github.com/chris-johnston/crowofjudgement?tab=readme-ov-file#assembly), and [this guide from Digikey seems helpful too](https://www.digikey.com/en/maker/tutorials/2023/how-to-solder-surface-mount-components-using-common-tools).
@@ -53,9 +55,21 @@ Hopefully the parts on the back went well, this part is a bit harder, and requir
 
 I don't know what I was thinking when I laid out the parts on this board, because the polarity of the LEDs is all over the place.
 
-TODO: need to make a diagram for how these are laid out
+For reference, the green "arrow" points towards negative on the bottom of the surface mount LED:
 
-https://i.sstatic.net/1TP3Z.gif
+(Cathode is negative if you are also prone to getting these swapped like me)
+
+![screenshot of the markers on the LED](img/1TP3Z.gif)
+
+Here's how these get placed on the main board:
+
+![screenshot of how the LEDs are placed on the board](img/image.png)
+
+This is just showing the same thing, but notice how the placement of the LEDs on the board have a notch out of the side which is negative.
+
+![closeup image](img/image-2.png)
+
+![assembly view of the board](img/image-1.png)
 
 ## 3. The battery holder
 
@@ -81,9 +95,19 @@ Once you've decided, solder these on and try to make sure they are in at a 90 de
 
 I may or may not have included parts to solder all of the accessory boards. They all should have the same pinout, and the same schematic.
 
-TODO: need to include a diagram for how the LEDs go on
+The placement of the LEDs is kinda tricky, because they all point in different ways. Remember that the notched side of the footprint is negative.
 
-The placement of the LEDs is kinda tricky, because they all point in different ways.
+Bottle cap:
+
+![bottle cap board](img/image-3.png)
+
+Paperclips:
+
+![paperclips](img/image-4.png)
+
+Needle and thread:
+
+![needle and thread](img/image-5.png)
 
 ## 7. Add battery and test
 
