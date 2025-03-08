@@ -122,3 +122,17 @@ If any LEDs do not light up, I would recommend checking:
 Reflowing the solder is a good way to check this again.
 
 You know where to find me if things continue to not work. Have fun!
+
+## Reference
+
+Schematic:
+
+![alt text](img/schematic.png)
+
+All of the accessoryboards have the same schematic:
+
+![alt text](img/accessory.png)
+
+Board view (front):
+
+![alt text](front-board-view.png)
